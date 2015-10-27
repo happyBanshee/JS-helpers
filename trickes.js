@@ -45,3 +45,7 @@ function trackAction(name, val, attr) {
     }
 }
 
+Ways to hide elelemts:
+1. $(elem).css({left: -33554430, position: 'absolute', top: -33554430});
+2. $(elem).css({visibility:'hidden'});
+3. $(elem).hide();
