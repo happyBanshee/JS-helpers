@@ -49,3 +49,17 @@ Ways to hide elelemts:
 1. $(elem).css({left: -33554430, position: 'absolute', top: -33554430});
 2. $(elem).css({visibility:'hidden'});
 3. $(elem).hide();
+
+
+REGEX
+This is a common behavior that the the exec or test methods show when you deal with patterns that have the global g flag.
+
+The RegExp object will keep track of the lastIndex where a match was found, and then on subsequent matches it will start from that lastIndex instead of starting from 0.
+
+For example:
+
+var re = /^a/g;
+console.log(re.test("ab")); // true, lastIndex was 0
+console.log(re.test("ab")); // false, lastIndex was 1
+Remove the g flag from your pattern, since you are looking just for a single match (you are testing each line separately).
+
